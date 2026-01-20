@@ -28,6 +28,8 @@ body {
   text-align: center;
   line-height: 1.6;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Organiza los elementos en columna */
 }
 
 /* Hero */
@@ -46,9 +48,9 @@ body {
 }
 
 .logo-titulo .logo {
-  width: 100px; /* Tamaño reducido del logo */
+  width: 150px; /* Tamaño más grande del logo */
   height: auto;
-  margin-bottom: 10px; /* Espacio entre el logo y el título */
+  margin-bottom: 20px; /* Espacio entre el logo y el título */
 }
 
 .logo-titulo h1 {
@@ -118,7 +120,7 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Efecto hover */
 }
 
-/* Secciones */
+/* Quiénes somos */
 .section {
   padding: 60px 30px;
   background: var(--blanco);
@@ -127,6 +129,22 @@ body {
   border-radius: 10px;
 }
 
+footer {
+  background-color: rgba(255,255,255,0.8);
+  font-size: 0.9rem;
+  padding: 15px;
+  margin-top: auto; /* Esto asegura que el footer se quede en la parte inferior */
+  width: 100%;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .hero-buttons .btn, .hero-buttons .btn-alt {
-    width:
+    width: 90%; /* Botones más anchos en pantallas móviles */
+    font-size: 1rem; /* Texto más pequeño para móviles */
+  }
+  
+  .hero-buttons {
+    margin-top: 20px;
+  }
+}
