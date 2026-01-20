@@ -26,67 +26,59 @@ body {
   background-color: var(--verde-extremadura); /* Fondo de respaldo para navegadores sin soporte de gradientes */
 }
 
-/* Barra de navegación fija en la parte superior */
-.navbar {
-  width: 100%;
-  background-color: var(--verde-extremadura);
-  color: var(--blanco);
-  padding: 20px 0;
+/* Barra lateral (sidebar) */
+.sidebar {
+  width: 250px;
+  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000; /* Asegura que la barra de navegación quede por encima del contenido */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.navbar .logo-titulo {
+  background-color: var(--verde-extremadura);
+  padding-top: 20px;
+  color: var(--blanco);
+  font-size: 1.2rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
 }
 
-.navbar h1 {
-  font-size: 2.5rem;
-}
-
-.navbar img.logo {
-  width: 50px;
-  height: auto;
-}
-
-nav ul {
+.sidebar ul {
   list-style-type: none;
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+  padding: 0;
+  width: 100%;
 }
 
-nav ul li {
-  margin: 0 15px;
+.sidebar ul li {
+  margin: 20px 0;
+  width: 100%;
 }
 
-nav ul li a {
+.sidebar ul li a {
+  display: block;
+  padding: 12px 20px;
   color: var(--blanco);
   text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  text-align: center;
+  border-radius: 30px;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-nav ul li a:hover {
-  color: var(--negro-extremadura);
+.sidebar ul li a:hover {
+  background-color: var(--blanco);
+  color: var(--verde-extremadura);
+  transform: translateY(-2px);
 }
 
-/* Ajustar el contenido principal para no quedar debajo de la barra fija */
+/* Contenido principal */
 .main-content {
-  margin-top: 100px; /* Asegura que el contenido principal no quede oculto debajo de la barra de navegación */
+  margin-left: 250px; /* Esto asegura que el contenido principal no quede debajo del panel lateral */
   padding: 20px;
   flex-grow: 1;
 }
 
 .hero {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6); /* Superposición oscura */
   padding: 60px 20px;
   color: var(--blanco);
   text-align: center;
@@ -200,46 +192,23 @@ footer {
   border-radius: 8px;
 }
 
-/* Estilos para móviles */
+/* Aseguramos que el panel lateral no cubra contenido en pantallas pequeñas */
 @media (max-width: 768px) {
-  /* Barra de navegación */
-  .navbar {
-    padding: 15px 0;
+  /* Panel lateral (sidebar) */
+  .sidebar {
+    width: 100%; /* El panel lateral ocupa toda la pantalla */
+    height: auto;
+    position: relative; /* Ya no se necesita fijo */
+    padding: 0;
   }
 
-  .navbar .logo-titulo {
-    flex-direction: column;
-  }
-
-  .navbar h1 {
-    font-size: 1.8rem;
-  }
-
-  .navbar img.logo {
-    width: 40px;
-  }
-
-  nav ul {
-    flex-direction: column;
-  }
-
-  nav ul li {
-    margin: 10px 0;
-  }
-
-  /* Contenido principal */
   .main-content {
-    margin-top: 120px; /* Ajuste para el contenido en móviles */
-    padding: 15px;
+    margin-left: 0; /* El contenido ocupa todo el espacio */
   }
 
-  .hero {
-    padding: 40px 20px;
-  }
-
-  /* Ajuste de los botones */
+  /* Aseguramos que los botones se ajusten en móviles */
   .hero-buttons .btn, .hero-buttons .btn-alt {
-    width: 90%; /* Los botones ocupan más espacio en pantallas pequeñas */
+    width: 90%;
     font-size: 1rem;
   }
 
