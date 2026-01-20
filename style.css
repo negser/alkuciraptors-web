@@ -18,19 +18,15 @@
 
 /* Fondo con bandera de Extremadura */
 body {
-  background: linear-gradient(
-    to bottom,
-    var(--verde-extremadura) 0% 33.33%,
-    var(--blanco) 33.33% 66.66%,
-    var(--negro-extremadura) 66.66% 100%
-  );
+  background-color: var(--verde-extremadura); /* Usamos el verde como fondo */
   color: var(--texto);
   text-align: center;
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
-  flex-direction: column; /* Organiza los elementos en columna */
+  flex-direction: column;
 }
+
 
 /* Hero */
 .hero {
