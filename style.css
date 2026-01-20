@@ -16,22 +16,21 @@
   --texto: #222;
 }
 
-/* Fondo con bandera de Extremadura */
+/* Fondo con franjas de colores verde, blanco y negro */
 body {
   background: linear-gradient(
     to bottom,
-    var(--verde-extremadura),
-    var(--blanco),
-    var(--negro-extremadura)
+    var(--verde-extremadura) 33%, /* Parte superior verde */
+    var(--blanco) 33% 66%,        /* Parte central blanca */
+    var(--negro-extremadura) 66% 100% /* Parte inferior negra */
   );
   color: var(--texto);
   text-align: center;
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Organiza los elementos en columna */
 }
-
 
 /* Hero */
 .hero {
