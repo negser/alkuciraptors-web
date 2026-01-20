@@ -1,26 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Quiénes somos? - Alkuciraptors</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Funciones para abrir y cerrar el menú izquierdo
+    function openLeftMenu() {
+      document.getElementById("leftMenu").style.display = "block";
+    }
+
+    function closeLeftMenu() {
+      document.getElementById("leftMenu").style.display = "none";
+    }
+
+  </script>
+</head>
 <body>
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <ul>
-      <li><a href="index.html" class="active">Inicio</a></li>
-      <li><a href="quienes-somos.html">¿Quiénes somos?</a></li>
-      <li><a href="entrenamientos.html">Entrenamientos</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="logo-titulo">
+      <h1>¿Quiénes somos?</h1>
+      <img src="imagenes/logo-alkuciraptors.png" alt="Alkuciraptors Logo" class="logo">
+    </div>
+    <!-- Botones para abrir los menús laterales -->
+    <button class="w3-button w3-teal w3-xlarge w3-left" onclick="openLeftMenu()">&#9776;</button>
+  </header>
+
+  <!-- Sidebar Izquierdo (Panel lateral izquierdo) -->
+  <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="leftMenu">
+    <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large">Cerrar &times;</button>
+    <a href="index.html" class="w3-bar-item w3-button">Inicio</a>
+    <a href="quienes-somos.html" class="w3-bar-item w3-button">¿Quiénes somos?</a>
+    <a href="entrenamientos.html" class="w3-bar-item w3-button">Entrenamientos</a>
+    <a href="contacto.html" class="w3-bar-item w3-button">Contacto</a>
   </div>
 
-  <!-- Contenido principal -->
-  <div class="main-content">
-    <!-- Cabecera -->
-    <header class="hero">
-      <div class="logo-titulo">
-        <img src="imagenes/logo-alkuciraptors.png" alt="Alkuciraptors Logo" class="logo">
-        <h1>Alkuciraptors Running Club</h1>
-      </div>
-      <p class="tagline">Club de running de Alcuéscar</p>
-    </header>
-
-    <!-- Sección ¿Quiénes somos? -->
+  <!-- Contenido Principal -->
+ <!-- Sección ¿Quiénes somos? -->
     <section id="quienes-somos" class="section">
       <h2>¿Quiénes somos?</h2>
       <p>Somos un club de running popular de <strong>Alcuéscar</strong>, un pequeño y acogedor pueblo ubicado en la provincia de Cáceres, Extremadura. Nos apasiona correr, compartir rutas y mejorar juntos. Nuestro club está formado por personas de todas las edades que buscan disfrutar del deporte, fomentar la amistad y llevar un estilo de vida saludable. 🏃‍♂️🏃‍♀️</p>
@@ -41,10 +59,10 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p>© 2026 Alkuciraptors Running Club</p>
-      <p>Hecho con ❤️ en Alcuéscar</p>
-    </footer>
-  </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Alkuciraptors Running Club</p>
+    <p>Hecho con ❤️ en Alcuéscar</p>
+  </footer>
 </body>
+</html>
