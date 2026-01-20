@@ -1,4 +1,4 @@
-/* Tipografía y Reset */
+/* Reset y tipografía */
 * {
   margin: 0;
   padding: 0;
@@ -6,101 +6,77 @@
   font-family: 'Roboto', sans-serif;
 }
 
-/* Colores base */
 :root {
-  --verde-extremadura: #009944; /* Verde */
-  --blanco: #ffffff;           /* Blanco */
-  --negro-extremadura: #000000;/* Negro */
+  --verde-extremadura: #009944;
+  --blanco: #ffffff;
+  --negro-extremadura: #000000;
   --texto: #222;
 }
 
-/* Fondo con gradiente (verde, blanco, negro) */
+/* Layout principal con sidebar y contenido */
 body {
-  background: linear-gradient(90deg, rgba(0, 153, 68, 1) 33%, rgba(255, 255, 255, 1) 66%, rgba(0, 0, 0, 1) 100%);
-  color: var(--texto);
-  text-align: center;
-  line-height: 1.6;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  background-color: var(--verde-extremadura); /* Fondo de respaldo para navegadores sin soporte de gradientes */
+  min-height: 100vh;
+  flex-direction: row; /* Sidebar a la izquierda, contenido a la derecha */
+  background-color: var(--verde-extremadura);
 }
 
-/* Barra lateral (sidebar) */
-.w3-sidebar {
+/* Barra lateral */
+.sidebar {
   width: 250px;
-  height: 100%;
-  position: fixed;
-  top: 0;
+  min-width: 250px;
+  height: 100vh;
   background-color: var(--verde-extremadura);
   color: var(--blanco);
-  font-size: 1.2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+  padding-top: 30px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 4px 0 6px rgba(0,0,0,0.1);
+  z-index: 10;
 }
 
-.w3-sidebar ul {
-  list-style-type: none;
+.sidebar ul {
+  list-style: none;
+  width: 100%;
   padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
   width: 100%;
 }
 
-.w3-sidebar ul li {
-  margin: 20px 0;
-  width: 100%;
-}
-
-.w3-sidebar ul li a {
+.sidebar ul li a {
   display: block;
   padding: 12px 20px;
-  color: var(--blanco);
   text-decoration: none;
+  color: var(--blanco);
   text-align: center;
   border-radius: 30px;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: 0.3s;
 }
 
-.w3-sidebar ul li a:hover {
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
   background-color: var(--blanco);
   color: var(--verde-extremadura);
-  transform: translateY(-2px);
 }
 
-/* Menú lateral animado - izquierdo */
-.w3-animate-left {
-  animation: slideInLeft 0.5s ease-out forwards;
-}
-
-/* Menú lateral animado - derecho */
-.w3-animate-right {
-  animation: slideInRight 0.5s ease-out forwards;
-}
-
-/* Animación de entrada desde la izquierda */
-@keyframes slideInLeft {
-  from {
-    left: -250px;
-  }
-  to {
-    left: 0;
-  }
-}
-
-/* Animación de entrada desde la derecha */
-@keyframes slideInRight {
-  from {
-    right: -250px;
-  }
-  to {
-    right: 0;
-  }
+/* Contenido principal */
+.main-content {
+  margin-left: 250px; /* deja espacio para la sidebar */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Hero Section */
 .hero {
-  background: rgba(0, 0, 0, 0.6); /* Superposición oscura */
+  background: rgba(0, 0, 0, 0.6);
   padding: 60px 20px;
   color: var(--blanco);
   text-align: center;
@@ -120,30 +96,9 @@ body {
 }
 
 .logo-titulo h1 {
-  font-size: 3.2rem;
+  font-size: 3rem;
 }
 
-/* Botones de la hero section */
-.w3-button {
-  background-color: var(--verde-extremadura);
-  color: var(--blanco);
-  border-radius: 30px;
-  transition: transform 0.3s ease;
-  padding: 12px 30px;
-  font-size: 1.5rem;
-  text-decoration: none;
-  margin-top: 20px;
-}
-
-.w3-button:hover {
-  transform: translateY(-2px);
-}
-
-.w3-left, .w3-right {
-  font-size: 2.2rem;
-}
-
-/* Contenido Principal */
 .section {
   padding: 60px 30px;
   background: var(--blanco);
@@ -152,43 +107,7 @@ body {
   border-radius: 10px;
 }
 
-.cards {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.card {
-  background: var(--blanco);
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 30%;
-  text-align: center;
-}
-
-.card h3 {
-  color: var(--verde-extremadura);
-  font-size: 1.6rem;
-}
-
-.card p {
-  font-size: 1.1rem;
-  color: var(--texto);
-}
-
-/* Footer */
-footer {
-  background: linear-gradient(90deg, rgba(0, 153, 68, 1) 33%, rgba(255, 255, 255, 1) 66%, rgba(0, 0, 0, 1) 100%);
-  font-size: 0.9rem;
-  padding: 15px;
-  margin-top: auto;
-  width: 100%;
-  text-align: center;
-}
-
-/* Galería de fotos */
+/* Galería y tarjetas */
 .galeria {
   display: flex;
   justify-content: center;
@@ -211,45 +130,57 @@ footer {
   border-radius: 8px;
 }
 
-/* Responsividad: Aseguramos que el panel lateral no cubra contenido en pantallas pequeñas */
+/* Footer */
+footer {
+  background: linear-gradient(90deg, rgba(0,153,68,1) 33%, rgba(255,255,255,1) 66%, rgba(0,0,0,1) 100%);
+  font-size: 0.9rem;
+  padding: 15px;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  /* Menú lateral */
-  .w3-sidebar {
-    width: 100%; /* El panel lateral ocupa toda la pantalla */
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
     height: auto;
-    position: relative; /* Ya no se necesita fijo */
-    padding: 0;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 0;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .sidebar ul li {
+    margin: 0;
+  }
+
+  .sidebar ul li a {
+    padding: 8px 12px;
+    font-size: 0.9rem;
   }
 
   .main-content {
-    margin-left: 0; /* El contenido ocupa todo el espacio */
+    margin-left: 0;
   }
 
-  /* Aseguramos que los botones se ajusten en móviles */
-  .w3-button {
-    width: 90%;
-    font-size: 1.1rem;
-  }
-
-  /* Ajustes para las tarjetas */
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 80%; /* Las tarjetas ocuparán más espacio en móviles */
-  }
-
-  /* Galería de fotos */
   .galeria {
     flex-direction: column;
     align-items: center;
-    gap: 10px;
   }
 
   .foto {
-    width: 90%; /* Las fotos ocuparán más espacio en móviles */
+    width: 90%;
     height: auto;
   }
 }
