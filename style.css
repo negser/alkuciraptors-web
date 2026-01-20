@@ -8,42 +8,63 @@
 
 /* Colores base */
 :root {
-  --verde-extremadura: #009944; /* Aproximación visual al Pantone 354 */ 
-  --verde-claro: #00b956;
-  --blanco: #fff;
+  --verde-extremadura: #009944; /* verde */
+  --blanco: #ffffff;            /* blanco */
+  --negro-extremadura: #000000; /* negro */
+  --verde-claro: #00b956;       /* verde claro para cards */
   --gris-claro: #f7f7f7;
   --texto: #222;
 }
 
-/* Body */
+/* Fondo con bandera de Extremadura (franjas horizontales) */
 body {
-  background-color: var(--gris-claro);
+  background: linear-gradient(
+    to bottom,
+    var(--verde-extremadura) 0% 33.33%,
+    var(--blanco) 33.33% 66.66%,
+    var(--negro-extremadura) 66.66% 100%
+  );
   color: var(--texto);
   text-align: center;
   line-height: 1.6;
+  min-height: 100vh;
 }
 
 /* Hero */
 .hero {
-  background-color: var(--verde-extremadura);
+  background: rgba(0,0,0,0.3); /* ligero overlay para contraste con fondo */
   padding: 50px 20px;
   color: var(--blanco);
 }
 
-.hero .logo {
-  width: 35px;   /* antes 90px */
-  height: 35px;  /* agregar para mantener proporción */
-  margin-bottom: 0; /* eliminar espacio debajo */
-  vertical-align: middle; /* alineación vertical con el texto */
+/* Logo y título en línea */
+.logo-titulo {
+  display: flex;
+  align-items: center; /* centra verticalmente logo y texto */
+  justify-content: center; /* centra horizontalmente */
+  gap: 10px;
 }
 
-.hero h1 {
+.logo-titulo .logo {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.logo-titulo h1 {
   font-size: 2.8rem;
+  margin: 0;
 }
 
+/* Subtítulo/tagline */
 .hero .tagline {
   font-size: 1.2rem;
   margin: 10px 0 20px;
+}
+
+/* Botones */
+.hero-buttons {
+  margin-top: 15px;
 }
 
 .btn {
@@ -66,14 +87,18 @@ body {
 .section {
   padding: 40px 20px;
   background: var(--blanco);
-  margin: 20px 0;
+  margin: 20px auto;
+  max-width: 900px;
+  border-radius: 8px;
 }
 
+/* Cards para entrenamientos */
 .cards {
   display: flex;
   justify-content: center;
   gap: 15px;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .card {
@@ -94,6 +119,7 @@ body {
 /* Footer */
 .footer {
   padding: 15px;
-  background-color: #ddd;
+  background-color: rgba(255,255,255,0.8);
   font-size: 0.9rem;
+  margin-top: 20px;
 }
