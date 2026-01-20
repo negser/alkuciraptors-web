@@ -3,20 +3,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif; /* Fuente mejorada */
 }
 
 /* Colores base */
 :root {
-  --verde-extremadura: #009944; /* verde */
-  --blanco: #ffffff;            /* blanco */
-  --negro-extremadura: #000000; /* negro */
-  --verde-claro: #00b956;       /* verde claro para cards */
+  --verde-extremadura: #009944;
+  --blanco: #ffffff;
+  --negro-extremadura: #000000;
+  --verde-claro: #00b956;
   --gris-claro: #f7f7f7;
   --texto: #222;
 }
 
-/* Fondo con bandera de Extremadura (franjas horizontales) */
+/* Fondo con bandera de Extremadura */
 body {
   background: linear-gradient(
     to bottom,
@@ -32,94 +32,53 @@ body {
 
 /* Hero */
 .hero {
-  background: rgba(0,0,0,0.3); /* ligero overlay para contraste con fondo */
-  padding: 50px 20px;
+  background: rgba(0, 0, 0, 0.6); /* Mejor contraste */
+  padding: 60px 20px;
   color: var(--blanco);
-}
-
-/* Logo y título en línea */
-.logo-titulo {
-  display: flex;
-  align-items: center; /* centra verticalmente logo y texto */
-  justify-content: center; /* centra horizontalmente */
-  gap: 10px;
-}
-
-.logo-titulo .logo {
-  width: 35px;
-  height: 35px;
-  object-fit: contain;
+  text-align: center;
 }
 
 .logo-titulo h1 {
-  font-size: 2.8rem;
-  margin: 0;
+  font-size: 3.2rem; /* Aumentar tamaño */
 }
 
-/* Subtítulo/tagline */
-.hero .tagline {
-  font-size: 1.2rem;
-  margin: 10px 0 20px;
+.hero-buttons .btn {
+  transition: 0.3s ease;
 }
 
-/* Botones */
-.hero-buttons {
-  margin-top: 15px;
+.btn:hover {
+  background-color: var(--verde-extremadura);
+  color: var(--blanco);
 }
 
-.btn {
+.btn-alt:hover {
   background-color: var(--blanco);
   color: var(--verde-extremadura);
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.btn-alt {
-  background-color: transparent;
-  border: 2px solid var(--blanco);
-  color: var(--blanco);
 }
 
 /* Secciones */
 .section {
-  padding: 40px 20px;
+  padding: 60px 30px;
   background: var(--blanco);
-  margin: 20px auto;
+  margin: 40px auto;
   max-width: 900px;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
-/* Cards para entrenamientos */
-.cards {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
+@media (max-width: 768px) {
+  .logo-titulo h1 {
+    font-size: 2.4rem;
+  }
 
-.card {
-  background: var(--verde-claro);
-  color: var(--blanco);
-  padding: 20px;
-  border-radius: 8px;
-  width: 180px;
-}
+  .hero {
+    padding: 40px 10px;
+  }
 
-/* Contacto */
-.contact-section a {
-  color: var(--verde-extremadura);
-  font-weight: bold;
-  text-decoration: none;
-}
+  .section {
+    padding: 40px 20px;
+  }
 
-/* Footer */
-.footer {
-  padding: 15px;
-  background-color: rgba(255,255,255,0.8);
-  font-size: 0.9rem;
-  margin-top: 20px;
+  .cards {
+    flex-direction: column;
+  }
 }
