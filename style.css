@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif; /* Fuente mejorada */
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Colores base */
@@ -32,14 +32,27 @@ body {
 
 /* Hero */
 .hero {
-  background: rgba(0, 0, 0, 0.6); /* Mejor contraste */
+  background: rgba(0, 0, 0, 0.6);
   padding: 60px 20px;
   color: var(--blanco);
   text-align: center;
 }
 
+.logo-titulo {
+  display: flex;
+  flex-direction: column; /* Cambia de fila a columna */
+  align-items: center; /* Centra tanto el logo como el título */
+  justify-content: center;
+}
+
+.logo-titulo .logo {
+  width: 80px; /* Tamaño reducido del logo */
+  height: auto;
+  margin-bottom: 10px; /* Espacio entre el logo y el título */
+}
+
 .logo-titulo h1 {
-  font-size: 3.2rem; /* Aumentar tamaño */
+  font-size: 3.2rem;
 }
 
 .hero-buttons .btn {
