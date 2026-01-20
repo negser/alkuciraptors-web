@@ -2,25 +2,43 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Contacto - Alkuciraptors</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Quiénes somos? - Alkuciraptors</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    // Funciones para abrir y cerrar el menú izquierdo
+    function openLeftMenu() {
+      document.getElementById("leftMenu").style.display = "block";
+    }
+
+    function closeLeftMenu() {
+      document.getElementById("leftMenu").style.display = "none";
+    }
+
+  </script>
 </head>
 <body>
+  <!-- Hero Section -->
   <header class="hero">
     <div class="logo-titulo">
-      <h1>Contacto</h1>
+      <h1>¿Quiénes somos?</h1>
       <img src="imagenes/logo-alkuciraptors.png" alt="Alkuciraptors Logo" class="logo">
     </div>
+    <!-- Botones para abrir los menús laterales -->
+    <button class="w3-button w3-teal w3-xlarge w3-left" onclick="openLeftMenu()">&#9776;</button>
   </header>
-  <!-- Panel lateral -->
-  <div class="sidebar">
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="quienes-somos.html">¿Quiénes somos?</a></li>
-      <li><a href="entrenamientos.html">Entrenamientos</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
+
+  <!-- Sidebar Izquierdo (Panel lateral izquierdo) -->
+  <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="leftMenu">
+    <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large">Cerrar &times;</button>
+    <a href="index.html" class="w3-bar-item w3-button">Inicio</a>
+    <a href="quienes-somos.html" class="w3-bar-item w3-button">¿Quiénes somos?</a>
+    <a href="entrenamientos.html" class="w3-bar-item w3-button">Entrenamientos</a>
+    <a href="contacto.html" class="w3-bar-item w3-button">Contacto</a>
   </div>
+
+  <!-- Contenido Principal -->
+ <!-- Sección ¿Quiénes somos? -->
   <section class="section contact-section">
     <h2>Contacto</h2>
     <p>¿Tienes dudas o quieres unirte?</p>
