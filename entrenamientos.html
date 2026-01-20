@@ -6,38 +6,41 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
+  <!-- Barra de navegación fija en la parte superior -->
+  <header class="navbar">
     <div class="logo-titulo">
       <h1>Entrenamientos</h1>
       <img src="imagenes/logo-alkuciraptors.png" alt="Alkuciraptors Logo" class="logo">
     </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="quienes-somos.html">¿Quiénes somos?</a></li>
+        <li><a href="entrenamientos.html">Entrenamientos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Panel lateral -->
-  <div class="sidebar">
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="quienes-somos.html">¿Quiénes somos?</a></li>
-      <li><a href="entrenamientos.html">Entrenamientos</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
+  <!-- Contenido principal -->
+  <div class="main-content">
+    <section class="section">
+      <div class="cards">
+        <div class="card">
+          <h3>Martes</h3>
+          <p>19:30 – Grupo principal</p>
+        </div>
+        <div class="card">
+          <h3>Jueves</h3>
+          <p>19:30 – Técnicas y ritmo</p>
+        </div>
+        <div class="card">
+          <h3>Domingos</h3>
+          <p>Tirada larga – Distancia variable</p>
+        </div>
+      </div>
+    </section>
   </div>
-  <section class="section">
-    <div class="cards">
-      <div class="card">
-        <h3>Martes</h3>
-        <p>19:30 – Grupo principal</p>
-      </div>
-      <div class="card">
-        <h3>Jueves</h3>
-        <p>19:30 – Técnicas y ritmo</p>
-      </div>
-      <div class="card">
-        <h3>Domingos</h3>
-        <p>Tirada larga – Distancia variable</p>
-      </div>
-    </div>
-  </section>
 
   <!-- Footer -->
   <footer class="footer">
