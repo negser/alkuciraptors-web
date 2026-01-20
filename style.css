@@ -27,14 +27,12 @@ body {
 }
 
 /* Barra lateral (sidebar) */
-.sidebar {
+.w3-sidebar {
   width: 250px;
   height: 100%;
   position: fixed;
   top: 0;
-  left: 0;
   background-color: var(--verde-extremadura);
-  padding-top: 20px;
   color: var(--blanco);
   font-size: 1.2rem;
   display: flex;
@@ -43,18 +41,18 @@ body {
   box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar ul {
+.w3-sidebar ul {
   list-style-type: none;
   padding: 0;
   width: 100%;
 }
 
-.sidebar ul li {
+.w3-sidebar ul li {
   margin: 20px 0;
   width: 100%;
 }
 
-.sidebar ul li a {
+.w3-sidebar ul li a {
   display: block;
   padding: 12px 20px;
   color: var(--blanco);
@@ -64,19 +62,43 @@ body {
   transition: background-color 0.3s, transform 0.3s;
 }
 
-.sidebar ul li a:hover {
+.w3-sidebar ul li a:hover {
   background-color: var(--blanco);
   color: var(--verde-extremadura);
   transform: translateY(-2px);
 }
 
-/* Contenido principal */
-.main-content {
-  margin-left: 250px; /* Esto asegura que el contenido principal no quede debajo del panel lateral */
-  padding: 20px;
-  flex-grow: 1;
+/* Menú lateral animado - izquierdo */
+.w3-animate-left {
+  animation: slideInLeft 0.5s ease-out forwards;
 }
 
+/* Menú lateral animado - derecho */
+.w3-animate-right {
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+/* Animación de entrada desde la izquierda */
+@keyframes slideInLeft {
+  from {
+    left: -250px;
+  }
+  to {
+    left: 0;
+  }
+}
+
+/* Animación de entrada desde la derecha */
+@keyframes slideInRight {
+  from {
+    right: -250px;
+  }
+  to {
+    right: 0;
+  }
+}
+
+/* Hero Section */
 .hero {
   background: rgba(0, 0, 0, 0.6); /* Superposición oscura */
   padding: 60px 20px;
@@ -101,62 +123,59 @@ body {
   font-size: 3.2rem;
 }
 
-.hero-buttons {
-  margin-top: 30px;
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hero-buttons .btn, .hero-buttons .btn-alt {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--verde-extremadura); /* Botones con fondo sólido */
-  color: var(--blanco);
-  padding: 12px 30px;
-  margin: 10px 0;
-  border-radius: 30px;
-  font-weight: bold;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  width: 250px;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Botones al pasar el ratón */
-.hero-buttons .btn:hover, .hero-buttons .btn-alt:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Efecto de sombra más intensa */
-}
-
-.hero-buttons .btn-alt {
-  background: transparent;
-  border: 2px solid var(--verde-extremadura);
-  color: var(--verde-extremadura);
-}
-
-.hero-buttons .btn-alt:hover {
+/* Botones de la hero section */
+.w3-button {
   background-color: var(--verde-extremadura);
   color: var(--blanco);
+  border-radius: 30px;
+  transition: transform 0.3s ease;
+  padding: 12px 30px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  margin-top: 20px;
 }
 
-.hero-buttons .btn:hover {
-  background-color: var(--blanco);
-  color: var(--verde-extremadura);
+.w3-button:hover {
+  transform: translateY(-2px);
 }
 
-/* Sección ¿Quiénes somos? */
+.w3-left, .w3-right {
+  font-size: 2.2rem;
+}
+
+/* Contenido Principal */
 .section {
   padding: 60px 30px;
   background: var(--blanco);
   margin: 40px auto;
   max-width: 900px;
   border-radius: 10px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: var(--blanco);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  text-align: center;
+}
+
+.card h3 {
+  color: var(--verde-extremadura);
+  font-size: 1.6rem;
+}
+
+.card p {
+  font-size: 1.1rem;
+  color: var(--texto);
 }
 
 /* Footer */
@@ -192,10 +211,10 @@ footer {
   border-radius: 8px;
 }
 
-/* Aseguramos que el panel lateral no cubra contenido en pantallas pequeñas */
+/* Responsividad: Aseguramos que el panel lateral no cubra contenido en pantallas pequeñas */
 @media (max-width: 768px) {
-  /* Panel lateral (sidebar) */
-  .sidebar {
+  /* Menú lateral */
+  .w3-sidebar {
     width: 100%; /* El panel lateral ocupa toda la pantalla */
     height: auto;
     position: relative; /* Ya no se necesita fijo */
@@ -207,13 +226,19 @@ footer {
   }
 
   /* Aseguramos que los botones se ajusten en móviles */
-  .hero-buttons .btn, .hero-buttons .btn-alt {
+  .w3-button {
     width: 90%;
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
-  .hero-buttons {
-    margin-top: 20px;
+  /* Ajustes para las tarjetas */
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%; /* Las tarjetas ocuparán más espacio en móviles */
   }
 
   /* Galería de fotos */
