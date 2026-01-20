@@ -6,27 +6,53 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Encabezado con logo -->
-  <h1>
-    <img src="imagenes/logo-alkuciraptors.png" alt="Alkuciraptors logo">
-    Alkuciraptors
-  </h1>
-  <p>Club de running de Alcuéscar</p>
 
-  <!-- Sección Quiénes somos -->
-  <h2>Quiénes somos</h2>
-  <p>Somos un club de running popular de Alcuéscar.</p>
+  <!-- Hero / Cabecera -->
+  <header class="hero">
+    <img src="imagenes/logo-alkuciraptors.png" alt="Alkuciraptors" class="logo">
+    <h1>Alkuciraptors Running Club</h1>
+    <p class="tagline">Club de running de Alcuéscar</p>
+    <a href="#entrenamientos" class="btn">Entrenamientos</a>
+    <a href="#contacto" class="btn btn-alt">Contacto</a>
+  </header>
 
-  <!-- Sección Entrenamientos -->
-  <h2>Entrenamientos</h2>
-  <ul>
-    <li>Martes: 19:30</li>
-    <li>Jueves: 19:30</li>
-    <li>Domingos: Tirada larga</li>
-  </ul>
+  <!-- Quiénes somos -->
+  <section id="quienes-somos" class="section">
+    <h2>Quiénes somos</h2>
+    <p>Somos un club de running popular de Alcuéscar, apasionados por correr, compartir rutas y mejorar juntos 🏃‍♂️🏃‍♀️</p>
+  </section>
 
-  <!-- Sección Contacto -->
-  <h2>Contacto</h2>
-  <p>Email: <a href="mailto:alkuciraptors@gmail.com">alkuciraptors@gmail.com</a></p>
+  <!-- Entrenamientos -->
+  <section id="entrenamientos" class="section">
+    <h2>Nuestros Entrenamientos</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Martes</h3>
+        <p>19:30 – Grupo principal</p>
+      </div>
+      <div class="card">
+        <h3>Jueves</h3>
+        <p>19:30 – Técnicas y ritmo</p>
+      </div>
+      <div class="card">
+        <h3>Domingos</h3>
+        <p>Tirada larga – Distancia variable</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="section contact-section">
+    <h2>Contacto</h2>
+    <p>¿Tienes dudas o quieres unirte?</p>
+    <p>Email: <a href="mailto:alkuciraptors@gmail.com">alkuciraptors@gmail.com</a></p>
+  </section>
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    <p>© 2026 Alkuciraptors Running Club</p>
+    <p>Hecho con ❤️ en Alcuéscar</p>
+  </footer>
+
 </body>
 </html>
