@@ -23,6 +23,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column; /* Organiza los elementos en columna */
+  background-color: var(--verde-extremadura); /* Fondo de respaldo para navegadores sin soporte de gradientes */
 }
 
 /* Hero */
@@ -128,6 +129,7 @@ footer {
     margin-top: 20px;
   }
 }
+
 /* Galería de fotos */
 .galeria {
   display: flex;
@@ -151,3 +153,14 @@ footer {
   border-radius: 8px;
 }
 
+/* Aseguramos que el panel lateral no cubra contenido en pantallas pequeñas */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* Panel lateral ocupa toda la pantalla en móvil */
+    position: relative; /* Ya no se necesita fijo */
+  }
+
+  .main-content {
+    margin-left: 0; /* El contenido ocupa todo el espacio */
+  }
+}
