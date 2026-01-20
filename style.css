@@ -32,7 +32,7 @@ body {
   height: 100%;
   position: fixed;
   top: 0;
-  left: 0;
+  left: -250px; /* Inicialmente oculto */
   background-color: var(--verde-extremadura);
   padding-top: 20px;
   color: var(--blanco);
@@ -40,7 +40,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease-in-out; /* Transición suave para deslizamiento */
 }
 
 .sidebar ul {
@@ -70,106 +70,49 @@ body {
   transform: translateY(-2px);
 }
 
+/* Estilo para el botón hamburguesa */
+.hamburger-menu {
+  display: none; /* Ocultamos el menú hamburguesa por defecto */
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.hamburger-menu .line {
+  width: 100%;
+  height: 4px;
+  background-color: var(--blanco);
+}
+
+/* Botón para cerrar el panel lateral */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: var(--blanco);
+  cursor: pointer;
+}
+
 /* Contenido principal */
 .main-content {
-  margin-left: 250px; /* Esto asegura que el contenido principal no quede debajo del panel lateral */
+  margin-left: 250px;
   padding: 20px;
   flex-grow: 1;
 }
 
 .hero {
-  background: rgba(0, 0, 0, 0.6); /* Superposición oscura */
+  background: rgba(0, 0, 0, 0.6);
   padding: 60px 20px;
   color: var(--blanco);
   text-align: center;
 }
 
-.logo-titulo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo-titulo .logo {
-  width: 150px;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.logo-titulo h1 {
-  font-size: 3.2rem;
-}
-
-.hero-buttons {
-  margin-top: 30px;
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hero-buttons .btn, .hero-buttons .btn-alt {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--verde-extremadura); /* Botones con fondo sólido */
-  color: var(--blanco);
-  padding: 12px 30px;
-  margin: 10px 0;
-  border-radius: 30px;
-  font-weight: bold;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  width: 250px;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Botones al pasar el ratón */
-.hero-buttons .btn:hover, .hero-buttons .btn-alt:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Efecto de sombra más intensa */
-}
-
-.hero-buttons .btn-alt {
-  background: transparent;
-  border: 2px solid var(--verde-extremadura);
-  color: var(--verde-extremadura);
-}
-
-.hero-buttons .btn-alt:hover {
-  background-color: var(--verde-extremadura);
-  color: var(--blanco);
-}
-
-.hero-buttons .btn:hover {
-  background-color: var(--blanco);
-  color: var(--verde-extremadura);
-}
-
-/* Sección ¿Quiénes somos? */
-.section {
-  padding: 60px 30px;
-  background: var(--blanco);
-  margin: 40px auto;
-  max-width: 900px;
-  border-radius: 10px;
-}
-
-/* Footer */
-footer {
-  background: linear-gradient(90deg, rgba(0, 153, 68, 1) 33%, rgba(255, 255, 255, 1) 66%, rgba(0, 0, 0, 1) 100%);
-  font-size: 0.9rem;
-  padding: 15px;
-  margin-top: auto;
-  width: 100%;
-  text-align: center;
-}
-
-/* Galería de fotos */
+/* Para la galería y el footer, ya estaba configurado correctamente */
 .galeria {
   display: flex;
   justify-content: center;
@@ -192,39 +135,24 @@ footer {
   border-radius: 8px;
 }
 
-/* Aseguramos que el panel lateral no cubra contenido en pantallas pequeñas */
+/* Estilos para el menú hamburguesa en pantallas pequeñas */
 @media (max-width: 768px) {
-  /* Panel lateral (sidebar) */
+  /* Mostrar botón hamburguesa */
+  .hamburger-menu {
+    display: flex;
+  }
+
+  /* Panel lateral para móviles */
   .sidebar {
-    width: 100%; /* El panel lateral ocupa toda la pantalla */
-    height: auto;
-    position: relative; /* Ya no se necesita fijo */
-    padding: 0;
+    width: 100%; /* Ocupa toda la pantalla */
+  }
+
+  /* Cuando el sidebar está activo */
+  .sidebar.active {
+    left: 0;
   }
 
   .main-content {
-    margin-left: 0; /* El contenido ocupa todo el espacio */
-  }
-
-  /* Aseguramos que los botones se ajusten en móviles */
-  .hero-buttons .btn, .hero-buttons .btn-alt {
-    width: 90%;
-    font-size: 1rem;
-  }
-
-  .hero-buttons {
-    margin-top: 20px;
-  }
-
-  /* Galería de fotos */
-  .galeria {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .foto {
-    width: 90%; /* Las fotos ocuparán más espacio en móviles */
-    height: auto;
+    margin-left: 0; /* El contenido ocupa toda la pantalla */
   }
 }
