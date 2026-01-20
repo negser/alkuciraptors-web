@@ -13,8 +13,16 @@
     </div>
   </header>
 
+  <!-- Botón de menú hamburguesa -->
+  <div class="hamburger-menu" onclick="toggleSidebar()">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+
   <!-- Panel lateral -->
-  <div class="sidebar">
+  <div id="sidebar" class="sidebar">
+    <div class="close-btn" onclick="toggleSidebar()">&times;</div>
     <ul>
       <li><a href="index.html">Inicio</a></li>
       <li><a href="quienes-somos.html">¿Quiénes somos?</a></li>
