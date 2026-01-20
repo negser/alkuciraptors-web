@@ -2,45 +2,55 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Entrenamientos - Alkuciraptors</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+  </script>
 </head>
 <body>
-  <!-- Barra de navegación fija en la parte superior -->
-  <header class="navbar">
+  <!-- Hero Section -->
+  <header class="hero">
     <div class="logo-titulo">
       <h1>Entrenamientos</h1>
       <img src="imagenes/logo-alkuciraptors.png" alt="Alkuciraptors Logo" class="logo">
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="quienes-somos.html">¿Quiénes somos?</a></li>
-        <li><a href="entrenamientos.html">Entrenamientos</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
+    <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
   </header>
 
-  <!-- Contenido principal -->
-  <div class="main-content">
-    <section class="section">
-      <div class="cards">
-        <div class="card">
-          <h3>Martes</h3>
-          <p>19:30 – Grupo principal</p>
-        </div>
-        <div class="card">
-          <h3>Jueves</h3>
-          <p>19:30 – Técnicas y ritmo</p>
-        </div>
-        <div class="card">
-          <h3>Domingos</h3>
-          <p>Tirada larga – Distancia variable</p>
-        </div>
-      </div>
-    </section>
+  <!-- Sidebar (Panel lateral) -->
+  <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+    <button onclick="w3_close()" class="w3-bar-item w3-large">Cerrar &times;</button>
+    <a href="index.html" class="w3-bar-item w3-button">Inicio</a>
+    <a href="quienes-somos.html" class="w3-bar-item w3-button">¿Quiénes somos?</a>
+    <a href="entrenamientos.html" class="w3-bar-item w3-button">Entrenamientos</a>
+    <a href="contacto.html" class="w3-bar-item w3-button">Contacto</a>
   </div>
+
+  <!-- Main Content Section -->
+  <section class="section">
+    <div class="cards">
+      <div class="card">
+        <h3>Martes</h3>
+        <p>19:30 – Grupo principal</p>
+      </div>
+      <div class="card">
+        <h3>Jueves</h3>
+        <p>19:30 – Técnicas y ritmo</p>
+      </div>
+      <div class="card">
+        <h3>Domingos</h3>
+        <p>Tirada larga – Distancia variable</p>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer">
