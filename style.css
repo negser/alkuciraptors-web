@@ -98,7 +98,54 @@ body {
 .logo-titulo h1 {
   font-size: 3rem;
 }
+.hero-buttons {
+  margin-top: 30px;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.hero-buttons .btn, .hero-buttons .btn-alt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--verde-extremadura); /* Botones con fondo sólido */
+  color: var(--blanco);
+  padding: 12px 30px;
+  margin: 10px 0;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  width: 250px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Botones al pasar el ratón */
+.hero-buttons .btn:hover, .hero-buttons .btn-alt:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Efecto de sombra más intensa */
+}
+
+.hero-buttons .btn-alt {
+  background: transparent;
+  border: 2px solid var(--verde-extremadura);
+  color: var(--verde-extremadura);
+}
+
+.hero-buttons .btn-alt:hover {
+  background-color: var(--verde-extremadura);
+  color: var(--blanco);
+}
+
+.hero-buttons .btn:hover {
+  background-color: var(--blanco);
+  color: var(--verde-extremadura);
+}
 .section {
   padding: 60px 30px;
   background: var(--blanco);
@@ -173,7 +220,15 @@ footer {
   .main-content {
     margin-left: 0;
   }
+  /* Aseguramos que los botones se ajusten en móviles */
+  .hero-buttons .btn, .hero-buttons .btn-alt {
+    width: 90%;
+    font-size: 1rem;
+  }
 
+  .hero-buttons {
+    margin-top: 20px;
+  }
   .galeria {
     flex-direction: column;
     align-items: center;
