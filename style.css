@@ -55,19 +55,54 @@ body {
   font-size: 3.2rem;
 }
 
-.hero-buttons .btn {
-  transition: 0.3s ease;
+/* Botones */
+.hero-buttons {
+  margin-top: 15px;
+}
+
+.btn {
+  background-color: var(--verde-extremadura);
+  color: var(--blanco);
+  padding: 12px 30px;
+  margin: 10px;
+  border-radius: 30px;  /* Bordes redondeados */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;  /* Un poco más grande */
+  display: inline-block;
+  transition: all 0.3s ease;  /* Transición suave para todos los efectos */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
 }
 
 .btn:hover {
-  background-color: var(--verde-extremadura);
-  color: var(--blanco);
+  background-color: var(--blanco);
+  color: var(--verde-extremadura);
+  transform: translateY(-2px); /* Efecto de levitación */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada en hover */
+}
+
+.btn-alt {
+  background-color: transparent;
+  border: 2px solid var(--verde-extremadura);
+  color: var(--verde-extremadura);
+  padding: 12px 30px;
+  margin: 10px;
+  border-radius: 30px;  /* Bordes redondeados */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn-alt:hover {
-  background-color: var(--blanco);
-  color: var(--verde-extremadura);
+  background-color: var(--verde-extremadura);
+  color: var(--blanco);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
+
 
 /* Secciones */
 .section {
