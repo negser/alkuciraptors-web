@@ -31,8 +31,10 @@ body {
 }
 
 .hero .logo {
-  width: 90px;
-  margin-bottom: 10px;
+  width: 35px;   /* antes 90px */
+  height: 35px;  /* agregar para mantener proporción */
+  margin-bottom: 0; /* eliminar espacio debajo */
+  vertical-align: middle; /* alineación vertical con el texto */
 }
 
 .hero h1 {
