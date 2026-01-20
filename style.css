@@ -22,11 +22,61 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
-  flex-direction: column; /* Organiza los elementos en columna */
+  flex-direction: column;
   background-color: var(--verde-extremadura); /* Fondo de respaldo para navegadores sin soporte de gradientes */
 }
 
-/* Hero */
+/* Barra lateral (sidebar) */
+.sidebar {
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--verde-extremadura);
+  padding-top: 20px;
+  color: var(--blanco);
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+  width: 100%;
+}
+
+.sidebar ul li a {
+  display: block;
+  padding: 12px 20px;
+  color: var(--blanco);
+  text-decoration: none;
+  text-align: center;
+  border-radius: 30px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background-color: var(--blanco);
+  color: var(--verde-extremadura);
+  transform: translateY(-2px);
+}
+
+/* Contenido principal */
+.main-content {
+  margin-left: 250px; /* Esto asegura que el contenido principal no quede debajo del panel lateral */
+  padding: 20px;
+  flex-grow: 1;
+}
+
 .hero {
   background: rgba(0, 0, 0, 0.6); /* Superposición oscura */
   padding: 60px 20px;
@@ -42,7 +92,7 @@ body {
 }
 
 .logo-titulo .logo {
-  width: 150px; /* Tamaño más grande del logo */
+  width: 150px;
   height: auto;
   margin-bottom: 20px;
 }
@@ -72,7 +122,7 @@ body {
   font-weight: bold;
   font-size: 1.1rem;
   transition: all 0.3s ease;
-  width: 250px; /* Ancho fijo para los botones */
+  width: 250px;
   text-decoration: none;
   position: relative;
   overflow: hidden;
@@ -100,7 +150,7 @@ body {
   color: var(--verde-extremadura);
 }
 
-/* Quiénes somos */
+/* Sección ¿Quiénes somos? */
 .section {
   padding: 60px 30px;
   background: var(--blanco);
@@ -120,13 +170,20 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 0;
+  }
+
+  .main-content {
+    margin-left: 0; /* El contenido ocupa todo el espacio */
+  }
+
   .hero-buttons .btn, .hero-buttons .btn-alt {
     width: 90%;
     font-size: 1rem;
-  }
-
-  .hero-buttons {
-    margin-top: 20px;
   }
 }
 
@@ -151,16 +208,4 @@ footer {
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
-}
-
-/* Aseguramos que el panel lateral no cubra contenido en pantallas pequeñas */
-@media (max-width: 768px) {
-  .sidebar {
-    width: 100%; /* Panel lateral ocupa toda la pantalla en móvil */
-    position: relative; /* Ya no se necesita fijo */
-  }
-
-  .main-content {
-    margin-left: 0; /* El contenido ocupa todo el espacio */
-  }
 }
